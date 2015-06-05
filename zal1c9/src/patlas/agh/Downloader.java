@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -46,7 +47,12 @@ public class Downloader {
 	}
 	
 	
-	public Boolean downloadPage()
+	/*public Boolean downloadPage()
+	{
+		return this.downloadPage(StandardCharsets.UTF_8);
+	}*/
+	
+	public Boolean downloadPage(/*Charset charSet*/)
 	{
 	    InputStream is = null;
 	    BufferedReader br;
@@ -66,7 +72,7 @@ public class Downloader {
 
 	    try {
 	        is = url.openStream();  // throws an IOException
-	        br = new BufferedReader(new InputStreamReader(is));
+	        br = new BufferedReader(new InputStreamReader(is/*,charSet*/));
 	        bw = new BufferedWriter(new FileWriter(file,false));
 	        //PrintWriter writer = new PrintWriter( new FileOutputStream(file, false) );
 	        while ((line = br.readLine()) != null) {
@@ -140,6 +146,22 @@ public class Downloader {
 			
 	}
 
+	
+	public Downloader(Preference pref)
+	{
+		String urlString = pref.getAddr();
+		timeout = Preference.TIMEOUT;
+		numtry = pref.getNumTry();
+		
+		fName = "f_"+Downloader.MD5string(urlString)+".html";
+		file = new File(dir+fName);
+		try {
+			url = new URL(urlString);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
 	
 	
 }
