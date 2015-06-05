@@ -16,7 +16,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 
-public class Downloader {
+public class Downloader implements Runnable {
 
 	private URL url;
 	private File file;
@@ -52,13 +52,13 @@ public class Downloader {
 		return this.downloadPage(StandardCharsets.UTF_8);
 	}*/
 	
-	public Boolean downloadPage(/*Charset charSet*/)
+	public void run(/*Charset charSet*/)
 	{
 	    InputStream is = null;
 	    BufferedReader br;
 	    BufferedWriter bw = null;
 	    String line;
-	    
+	    System.out.println("Teraz dzialam ja:" + url.toString()); //zakomentowac !!
 	    if(!file.exists())
 		{
 			try{
@@ -93,7 +93,7 @@ public class Downloader {
 	        }
 	    }
 	    isDownloaded = true;
-	    return true;
+	    //return true;
 	}
 	
 	public String getStringUrl()
