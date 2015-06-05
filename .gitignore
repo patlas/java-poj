@@ -13,3 +13,6 @@ hs_err_pid*
 #eclipse preferences settings
 .metadata/
 .recommenders/
+
+#downloaded pages
+zal1c9/web_pages/*.html
