@@ -59,6 +59,9 @@ public class Downloader implements Runnable {
 	    BufferedWriter bw = null;
 	    String line;
 	    System.out.println("Teraz dzialam ja:" + url.toString()); //zakomentowac !!
+	    
+	    System.setProperty("http.agent", ""); 
+	    
 	    if(!file.exists())
 		{
 			try{

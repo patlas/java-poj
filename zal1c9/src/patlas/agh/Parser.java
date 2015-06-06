@@ -95,6 +95,7 @@ public ArrayList<ArrayList<ArrayList<String>>> getChannels(){
 					for(Element tCG : tCL.getElementsByTag("td"))
 					{
 						if(index++ < 2) continue; //pomijanie 2 pierwszych kolumn "œmieci"
+						System.out.println(tCG.text());
 						channelList.add(tCG.text());
 					}
 					channelGroups.add(channelList);
