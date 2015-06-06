@@ -47,7 +47,7 @@ public class TestDownloaderPool {
 		list.add(new Downloader("http://seguro.pl"));
 		
 		/* jw dodanie obiektu do listy + prezentacja konstruktora Downloader(String,String) */
-		list.add(new Downloader("http://tme.pl","tme2.html"));
+		list.add(new Downloader("http://pl.kingofsat.net/pos-13E_pol.php","hotbird.html"));
 		
 		
 		

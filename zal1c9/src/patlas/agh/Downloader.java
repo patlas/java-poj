@@ -101,6 +101,12 @@ public class Downloader implements Runnable {
 		return url.toString();
 	}
 	
+	
+	public File getFile()
+	{
+		return file;
+	}
+	
 	public Downloader(String urlString)
 	{
 		fName = "f_"+Downloader.MD5string(urlString)+".html";
