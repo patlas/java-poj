@@ -20,12 +20,18 @@ public class Downloader implements Runnable {
 
 	private URL url;
 	private File file;
-	public int numtry;
-	public int timeout;
+	public int numtry = 1;
+	public static long TIMEOUT=0;;
 	private String fName;
 	
 	public Boolean isDownloaded = false;
 	private String dir= "web_pages/";
+	
+	
+	public static void setTimeout(long time)
+	{
+		TIMEOUT = time;
+	}
 	
 	
 	private static String MD5string(String str) //tworzenie nazw plików je¿eli takowych nie podano
@@ -127,6 +133,7 @@ public class Downloader implements Runnable {
 		fName = "f_"+Downloader.MD5string(Url.toString())+".html";
 		file = new File(dir+fName);
 		url = Url;
+		isDownloaded = true;
 	}
 	
 	public Downloader(String urlString, String fileName)
@@ -152,6 +159,7 @@ public class Downloader implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
+		isDownloaded = true;
 			
 	}
 
@@ -159,7 +167,7 @@ public class Downloader implements Runnable {
 	public Downloader(Preference pref)
 	{
 		String urlString = pref.getAddr();
-		timeout = Preference.TIMEOUT;
+		TIMEOUT = Preference.TIMEOUT;
 		numtry = pref.getNumTry();
 		
 		fName = "f_"+Downloader.MD5string(urlString)+".html";
@@ -170,6 +178,7 @@ public class Downloader implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
+		isDownloaded = true;
 	}
 	
 	

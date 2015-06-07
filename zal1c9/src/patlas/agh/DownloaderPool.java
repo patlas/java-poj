@@ -21,11 +21,26 @@ public class DownloaderPool {
 	
 	public ArrayList<Future<?>> addAll(ArrayList<Downloader> list) throws MalformedURLException
 	{
+		
+		/*   ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future<String> future = executor.submit(new Task());
+
+        try {
+            System.out.println("Started..");
+            System.out.println(future.get(5, TimeUnit.SECONDS));
+            System.out.println("Finished!");
+        } catch (TimeoutException e) {
+            System.out.println("Terminated!");
+        }
+
+        executor.shutdownNow();
+        
+	*/
 			
 		ArrayList<Future<?>> ret = new ArrayList<Future<?>>();
 		
 		BlockingQueue<Runnable> runnables = new ArrayBlockingQueue<Runnable>(1024);
-		ThreadPoolExecutor executor = new ThreadPoolExecutor(8, 16, 60, TimeUnit.SECONDS, runnables);
+		ThreadPoolExecutor executor = new ThreadPoolExecutor(8, 16, Downloader.TIMEOUT, TimeUnit.SECONDS, runnables);
 		
 		exec = executor;
 		

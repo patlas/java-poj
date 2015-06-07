@@ -16,8 +16,11 @@ public class Parser {
 	public Parser(Downloader webpage)
 	{
 		if(webpage.isDownloaded == true)
+		{
 			file = webpage.getFile(); //DODAÆ LOG!!
-		
+			//System.out.println(webpage.getFile().toString());
+		}
+//		System.out.println(webpage.getFile().toString());
 	}
 	
 	public Parser(File f)

@@ -1,15 +1,10 @@
 <PAGE>
-	<ADDR>http://allegro.pl</ADDR>
-	<TRY>7</TRY>
-</PAGE>
-
-<PAGE>
 	<ADDR>http://onet.pl</ADDR>
 	<TRY>7</TRY>
 </PAGE>
 
 <PAGE>
-	<ADDR>http://tme.pl</ADDR>
-	<TRY>7</TRY>
+	<ADDR>http://pl.kingofsat.net/pos-13E_pol.php</ADDR>
+	<TRY>5</TRY>
 </PAGE>
 

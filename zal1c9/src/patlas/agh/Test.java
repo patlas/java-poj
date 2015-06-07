@@ -62,6 +62,7 @@ import patlas.agh.utils.TwoTypeList;
 
 
 
+
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -70,13 +71,15 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import javax.swing.JFrame;
+
 import org.jsoup.nodes.Element;
 
 
 
 public class Test {
-    public static void main(String[] args) throws Exception {
-     /*   ExecutorService executor = Executors.newSingleThreadExecutor();
+   /* public static void main(String[] args) throws Exception {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<String> future = executor.submit(new Task());
 
         try {
@@ -88,33 +91,26 @@ public class Test {
         }
 
         executor.shutdownNow();
-        
-	*/
-    	ArrayList<ArrayList<String>> x = new ArrayList<ArrayList<String>>();
-    	ArrayList<String> s = new ArrayList<String>();
-    	
-    	int z,y,w=0;
-    	for(z=0; z<3;z++)
-		{
-			s.clear(); 
-			for(y=0;y<4;y++)
-			{
-				s.add(""+w++);
-			}
-			x.add(s);
-		}
-    	
-    	for(ArrayList<String>  tr : x)
-        {
-        	for( String t : tr)
-        	{
-        		System.out.println(t);
-        	}
-        	System.out.println("-----------------");
-        }
-    	
-        
-    }
+
+    }*/
+	
+	
+	
+	public static void createAndShowGUI() { 
+		MyGUI gui = new MyGUI(); 
+		gui.pack(); 
+		gui.setVisible(true); 
+		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gui.setSize(400, 320);
+		} 
+	
+	
+		public static void main(String[] args) { 
+		javax.swing.SwingUtilities.invokeLater(new Runnable() { 
+		public void run() { createAndShowGUI(); } 
+		}); 
+		} 
+	
 }
 
 class Task implements Callable<String> {
