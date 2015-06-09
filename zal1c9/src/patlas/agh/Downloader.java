@@ -14,6 +14,10 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Set;
+import java.util.concurrent.CopyOnWriteArraySet;
+
+import patlas.agh.utils.ThreadCompleteListener;
 
 
 public class Downloader implements Runnable {
@@ -26,6 +30,26 @@ public class Downloader implements Runnable {
 	
 	public Boolean isDownloaded = false;
 	private String dir= "web_pages/";
+	
+	private final Set<ThreadCompleteListener> listeners = new CopyOnWriteArraySet<ThreadCompleteListener>();
+	
+	public final void addListener(final ThreadCompleteListener listener) 
+	{
+		listeners.add(listener);
+	}
+	
+	public final void removeListener(final ThreadCompleteListener listener) 
+	{
+		listeners.remove(listener);
+	}
+	
+	private final void notifyListeners() {
+		for (ThreadCompleteListener listener : listeners) 
+		{
+			listener.notifyOfThreadComplete(this);
+		}
+	}
+		
 	
 	
 	public static void setTimeout(long time)
@@ -57,8 +81,17 @@ public class Downloader implements Runnable {
 	{
 		return this.downloadPage(StandardCharsets.UTF_8);
 	}*/
+	public void run()
+	{
+	try {
+	      doRun();
+	    } finally 
+	    {
+	      notifyListeners();
+	    }
+	}
 	
-	public void run(/*Charset charSet*/)
+	public void doRun(/*Charset charSet*/)
 	{
 	    InputStream is = null;
 	    BufferedReader br;

@@ -44,19 +44,29 @@ import java.util.concurrent.Future;
 import javax.swing.JScrollPane;
 
 import patlas.agh.exception.MyException;
+import patlas.agh.utils.CheckListItem;
+import patlas.agh.utils.TaskDone;
+import patlas.agh.utils.ThreadCompleteListener;
 
-public class MyGUI extends JFrame {
+public class MyGUI extends JFrame{
 	private JTextField timeoutText;
-	private JTextField addrText;
-	
+	private JTextField addrText;	
 	private CheckListItem[] listItem;
 	private ArrayList<Downloader> listDownloaderPool = new ArrayList<Downloader>();
-	
 	private String dataBase = "test.db";
+	private Thread parsingThread = null;
+	
+	public void notifyOfThreadComplete(Downloader downloader)
+	{
+		
+	}
+	
+	
 	public MyGUI() {
 		setResizable(false);
 		
 		JList list_1 = new JList();
+		
 		getContentPane().setLayout(null);
 		
 		/*JList settings */
@@ -125,6 +135,7 @@ public class MyGUI extends JFrame {
 		addBtn.setBounds(148, 151, 41, 20);
 		getContentPane().add(addBtn);
 		
+		
 		JButton downloadBtn = new JButton("DOWNLOAD");
 		downloadBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -134,11 +145,19 @@ public class MyGUI extends JFrame {
 					if(listItem[index].isSelected()==true)
 					{
 						listDownloaderPool.add(new Downloader(Preferences.prefList.get(index)));
+						
+						//listDownloaderPool.get(index).addListener(this);
+						
+						//patlas.agh.addListener(this);
 						//System.out.println(Preferences.prefList.get(index).getAddr());
+						
 					}
 				}
 				
+				parsingThread = new Thread(new TaskDone(listDownloaderPool,dataBase, listItem));
+				parsingThread.start();
 				
+				/*
 				DownloaderPool dp = new DownloaderPool();		
 				try {
 					ArrayList<Future<?>> tasks = dp.addAll(listDownloaderPool);
@@ -171,14 +190,14 @@ public class MyGUI extends JFrame {
 				} catch (MyException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}
+				}*/
 				
 				
 				
-				listDownloaderPool.clear();
+				//listDownloaderPool.clear();
 			}
 		});
-		downloadBtn.setBounds(217, 23, 164, 124);
+		downloadBtn.setBounds(217, 23, 164, 58);
 		getContentPane().add(downloadBtn);
 		
 		JButton exitBtn = new JButton("EXIT");
@@ -235,6 +254,20 @@ public class MyGUI extends JFrame {
 		});
 		removeBtn.setBounds(148, 129, 41, 20);
 		getContentPane().add(removeBtn);
+		
+		JButton abortBtn = new JButton("ABORT DOWNLOADING");
+		abortBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				if(parsingThread.isAlive() && parsingThread!=null)
+				{
+					System.out.println("Is alive");
+					parsingThread.interrupt();
+				}	
+			}
+		});
+		abortBtn.setBounds(217, 92, 164, 55);
+		getContentPane().add(abortBtn);
 		
 		list_1.addMouseListener(new MouseAdapter()	
 		{	
@@ -311,7 +344,7 @@ public class MyGUI extends JFrame {
 
 
 
-class CheckListItem
+/*class CheckListItem
 {
 	private String  label;
 	private boolean isSelected = false;
@@ -337,7 +370,7 @@ class CheckListItem
 		return label;
 	}
 
-}
+}*/
 
 // Handles rendering cells in the list using a check box
 
