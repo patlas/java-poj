@@ -7,6 +7,7 @@ public class Preference {
 	
 	public static  int TIMEOUT = 80;
 	private String addr;
+	private static String USR_AGENT;
 	//private String name;
 	private int numTry;
 	
@@ -54,6 +55,15 @@ public class Preference {
 		return this.numTry;
 	}
 	
+	public static String getAgent()
+	{
+		return USR_AGENT;
+	}
+	
+	public static void setAgent(String usrAgent)
+	{
+		 USR_AGENT = usrAgent;
+	}
 	
 }
 

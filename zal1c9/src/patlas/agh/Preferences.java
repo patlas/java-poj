@@ -41,6 +41,11 @@ public class Preferences {
 		try {
 				PrintWriter writer = new PrintWriter( new FileOutputStream(file, false) );	
 				
+				writer.println("<AGENT>");
+				writer.println(Preference.getAgent());
+				writer.println("</AGENT>");
+				writer.println("");
+				
 				for(Preference pref : prefList )
 				{
 					writer.println("<PAGE>");
@@ -81,6 +86,8 @@ public class Preferences {
 			doc = Jsoup.parse(file, "UTF-8");
 			//Element link = doc.select("TRY").first();
 			ArrayList<Element> pageList = new ArrayList<Element>();
+			
+			Preference.setAgent(doc.getElementsByTag("AGENT").get(0).text().toString());
 			pageList = doc.getElementsByTag("PAGE");
 			
 			

@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -27,6 +28,7 @@ public class Downloader implements Runnable {
 	public int numtry = 1;
 	public static long TIMEOUT=0;;
 	private String fName;
+	public static String usrAgent = "brak";
 	
 	public Boolean isDownloaded = false;
 	private String dir= "web_pages/";
@@ -114,7 +116,14 @@ public class Downloader implements Runnable {
 		}
 
 	    try {
-	        is = url.openStream();  // throws an IOException
+	        //is = url.openStream();  // throws an IOException
+	    	
+	    	
+	    	HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+	    	httpConn.setRequestProperty("User-agent", usrAgent);
+	    	is = httpConn.getInputStream();
+	    	
+	    	
 	        br = new BufferedReader(new InputStreamReader(is/*,charSet*/));
 	        bw = new BufferedWriter(new FileWriter(file,false));
 	        //PrintWriter writer = new PrintWriter( new FileOutputStream(file, false) );
@@ -214,6 +223,8 @@ public class Downloader implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
+		
+		usrAgent = pref.getAgent();
 		isDownloaded = true;
 	}
 	

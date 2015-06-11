@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.ListModel;
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 
 import javax.swing.border.BevelBorder;
@@ -45,6 +46,7 @@ import javax.swing.JScrollPane;
 
 import patlas.agh.exception.MyException;
 import patlas.agh.utils.CheckListItem;
+import patlas.agh.utils.DataBaseViewer;
 import patlas.agh.utils.TaskDone;
 import patlas.agh.utils.ThreadCompleteListener;
 
@@ -327,6 +329,28 @@ public class MyGUI extends JFrame{
 				}
 			}
 		});
+		
+		JMenuItem mntmShowDb = new JMenuItem("Show DB");
+		mntmShowDb.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				javax.swing.SwingUtilities.invokeLater(new Runnable() { 
+					public void run()
+					{
+						DataBaseViewer dbView = new DataBaseViewer(); 
+						dbView.pack(); 
+						dbView.setVisible(true); 
+						//dbView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						//dbView.setSize(400, 320);
+						dbView.setMinimumSize(new Dimension(550,320));
+					} 	
+					
+				}); 
+				
+				
+			}
+		});
+		mnDataBase.add(mntmShowDb);
 		mnDataBase.add(mntmClear);
 		
 		JMenu mnAbout = new JMenu("About");
@@ -353,9 +377,6 @@ public class MyGUI extends JFrame{
 		
 
 	}
-	
-	
-	
 }
 
 

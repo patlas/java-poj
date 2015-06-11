@@ -3,6 +3,7 @@ package patlas.agh;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -191,6 +192,57 @@ public class SqlDB {
 		
 		}
 	}	
+	
+	
+	
+	public  String[][] readData(String table) throws MyException
+	{
+		int size = 0;
+		if(table.equalsIgnoreCase("transponders") == true)
+			size = 9;
+		else if(table.equalsIgnoreCase("channels") == true)
+			size = 13;
+		
+		
+		try {
+			Statement stmt = con.createStatement();	
+            ResultSet result = stmt.executeQuery("SELECT * FROM "+table+";");
+            
+
+            ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
+      
+            while(result.next()) 
+            {
+            	ArrayList<String> retBld = new ArrayList<String>();
+            	for(int index=1; index<size; index++)
+            	{
+            		retBld.add(result.getString(index));
+            	}
+            	array.add(retBld);
+            }
+            
+            if(array.isEmpty()) throw new MyException("Data base empty or doesn't exist");
+            
+            String [][] ret = new String[array.size()+1][array.get(0).size()+1];
+            int index = 0;
+            for(ArrayList<String> arr : array)
+            {
+            	int subindex=0;
+            	for(String str : arr)
+            	{
+            		ret[index][subindex++] = str;
+            	}
+            	index++;
+            }
+            
+            return ret;
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+		
+	}
 	
 	
 	

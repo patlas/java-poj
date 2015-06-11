@@ -3,6 +3,8 @@
  */
 package patlas.agh;
 
+import javax.swing.JOptionPane;
+
 import patlas.agh.exception.MyException;
 
 /**
@@ -65,6 +67,11 @@ public class DownloaderWithParseDB extends Downloader {
 			//this.notifyAll();
 			if(this.getFile().delete() == true); // DODAC LOGGER (nie)uda³o siê usun¹æ pliku
 			System.out.println("Pobra³em i skoñczy³em");
+			
+			JOptionPane.showMessageDialog(null,"Strona o adresie: "+ this.getStringUrl() + " zosta³a"
+					+ " przetworzona pomyœlnie!","Pobieranie zakoñczone",
+				    JOptionPane.INFORMATION_MESSAGE
+				  );
 			
 		} catch (MyException e) {
 			// TODO Auto-generated catch block

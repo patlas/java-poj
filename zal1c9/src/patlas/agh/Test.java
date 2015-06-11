@@ -63,13 +63,19 @@ import patlas.agh.utils.TwoTypeList;
 
 
 
+
+
+
+
 import java.util.ArrayList;
+import java.util.TimerTask;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.Timer;
 
 import javax.swing.JFrame;
 
@@ -107,8 +113,7 @@ public class Test {
 	
 		public static void main(String[] args) { 
 		
-			//DownloaderPoolParse x = new DownloaderPoolParse(new Preference());
-			
+			 
 			
 			javax.swing.SwingUtilities.invokeLater(new Runnable() { 
 		public void run() { createAndShowGUI(); } 
