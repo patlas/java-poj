@@ -59,9 +59,10 @@ public class TaskDone implements Runnable{
 			
 			for(int index=0; index<Preferences.prefList.size();index++)
 			{
+				if(Thread.interrupted()) System.out.println("Parsing ABORTED2");
 				if(Thread.currentThread().isInterrupted()==true)
 				{
-					System.out.println("Parsing ABORTED");
+					System.out.println("Parsing ABORTED"); return;
 					//Thread.currentThread().interrupt();
 				}
 				
@@ -69,7 +70,7 @@ public class TaskDone implements Runnable{
 				{
 					Parser parser = new Parser(new Downloader(Preferences.prefList.get(index)));
 					db.connectDB();
-					db.clearDB();
+					//db.clearDB();
 					db.insertTransponderRows(parser.getTransponder());
 					db.insertChannelRows(parser.getChannels());
 					
@@ -97,7 +98,7 @@ public class TaskDone implements Runnable{
             //}
 		}*/
 				
-		System.out.println("Parsing DONE");
+		System.out.println("Parsing DONE"); //DODAÆ LOG I DIALOG BOXA
 	};
 
 }

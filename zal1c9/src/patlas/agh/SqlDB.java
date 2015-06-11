@@ -13,14 +13,22 @@ public class SqlDB {
 	
 	Connection con = null;
 	private static int FREE_POSITION=0;
+	public static Boolean IN_USE = false;
+	public static String DB_NAME = "test.db";
 	
 	private String loc = null;
 	private int myID = 0;
+	
 	
 	public SqlDB(String localization)
 	{
 		loc = localization;
 		myID = 1000*FREE_POSITION;
+		FREE_POSITION++;
+	}
+	
+	public static void incPosition()
+	{
 		FREE_POSITION++;
 	}
 	

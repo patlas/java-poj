@@ -98,7 +98,8 @@ public class Downloader implements Runnable {
 	    BufferedWriter bw = null;
 	    String line;
 	    System.out.println("Teraz dzialam ja:" + url.toString()); //zakomentowac !!
-	    
+	    //DODAÆ LOGGER -> taki task teraz dzia³a
+	    Thread.currentThread().setName(fName);
 	    System.setProperty("http.agent", ""); 
 	    
 	    if(!file.exists())
@@ -135,6 +136,8 @@ public class Downloader implements Runnable {
 	        }
 	    }
 	    isDownloaded = true;
+	    
+	    //new Parser(this);
 	    //return true;
 	}
 	

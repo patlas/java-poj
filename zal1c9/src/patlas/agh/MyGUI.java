@@ -55,6 +55,7 @@ public class MyGUI extends JFrame{
 	private ArrayList<Downloader> listDownloaderPool = new ArrayList<Downloader>();
 	private String dataBase = "test.db";
 	private Thread parsingThread = null;
+	private DownloaderPool downloaderPool = null;
 	
 	public void notifyOfThreadComplete(Downloader downloader)
 	{
@@ -144,7 +145,9 @@ public class MyGUI extends JFrame{
 				{
 					if(listItem[index].isSelected()==true)
 					{
-						listDownloaderPool.add(new Downloader(Preferences.prefList.get(index)));
+						// DOBRE STARE ROZWIAZANIE
+						//listDownloaderPool.add(new Downloader(Preferences.prefList.get(index)));
+						listDownloaderPool.add(new DownloaderWithParseDB(Preferences.prefList.get(index)));
 						
 						//listDownloaderPool.get(index).addListener(this);
 						
@@ -154,8 +157,16 @@ public class MyGUI extends JFrame{
 					}
 				}
 				
-				parsingThread = new Thread(new TaskDone(listDownloaderPool,dataBase, listItem));
-				parsingThread.start();
+				downloaderPool = new DownloaderPool();		
+				try {
+					ArrayList<Future<?>> tasks = downloaderPool.addAll(listDownloaderPool);
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				/*parsingThread = new Thread(new TaskDone(listDownloaderPool,dataBase, listItem));
+				parsingThread.start();*/
 				
 				/*
 				DownloaderPool dp = new DownloaderPool();		
@@ -174,10 +185,10 @@ public class MyGUI extends JFrame{
 						{
 							Parser parser = new Parser(new Downloader(Preferences.prefList.get(index)));
 							db.connectDB();
-							db.clearDB();
+							//db.clearDB();
 							db.insertTransponderRows(parser.getTransponder());
 							db.insertChannelRows(parser.getChannels());
-							
+							SqlDB.incPosition();
 							//System.out.println(Preferences.prefList.get(index).getAddr());
 						}
 					}
@@ -194,7 +205,7 @@ public class MyGUI extends JFrame{
 				
 				
 				
-				//listDownloaderPool.clear();
+				listDownloaderPool.clear();
 			}
 		});
 		downloadBtn.setBounds(217, 23, 164, 58);
@@ -259,11 +270,14 @@ public class MyGUI extends JFrame{
 		abortBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				if(parsingThread.isAlive() && parsingThread!=null)
-				{
-					System.out.println("Is alive");
-					parsingThread.interrupt();
-				}	
+				
+					if(downloaderPool != null)
+					{
+						downloaderPool.stopNow();
+						System.out.println("Taks stopped!");
+					}
+						
+					
 			}
 		});
 		abortBtn.setBounds(217, 92, 164, 55);
@@ -339,6 +353,9 @@ public class MyGUI extends JFrame{
 		
 
 	}
+	
+	
+	
 }
 
 

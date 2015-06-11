@@ -106,10 +106,18 @@ public class Test {
 	
 	
 		public static void main(String[] args) { 
-		javax.swing.SwingUtilities.invokeLater(new Runnable() { 
+		
+			//DownloaderPoolParse x = new DownloaderPoolParse(new Preference());
+			
+			
+			javax.swing.SwingUtilities.invokeLater(new Runnable() { 
 		public void run() { createAndShowGUI(); } 
 		}); 
 		} 
+		
+		
+		
+		
 	
 }
 
