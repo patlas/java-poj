@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,15 +13,16 @@ import org.jsoup.nodes.Element;
 public class Parser {
 	
 	private File file = null;
+	final static Logger logger = Logger.getLogger(Parser.class);
 	
 	public Parser(Downloader webpage)
 	{
 		if(webpage.isDownloaded == true)
 		{
 			file = webpage.getFile(); //DODAÆ LOG!!
-			//System.out.println(webpage.getFile().toString());
+			logger.info("Pobieranie pliku preferencji zakoñczone sukcesem.");
 		}
-//		System.out.println(webpage.getFile().toString());
+
 	}
 	
 	public Parser(File f)
@@ -35,16 +37,13 @@ public class Parser {
 	
 	public ArrayList<ArrayList<String>> getTransponder(){
 		
-		//File file = new File("web_pages/hotbird.html");
 		Document doc;
 		
 		ArrayList<ArrayList<String>> parsedTransponders = new ArrayList<ArrayList<String>>();
 		
 		try {
 			doc = Jsoup.parse(file, "UTF-8");
-			//Element link = doc.select("TRY").first();
 			ArrayList<Element> transponderList = new ArrayList<Element>();
-			//pageList = doc.getElementsByTag("PAGE");
 			transponderList = doc.getElementsByClass("frq");
 			
 			ArrayList<String> transponderParams; 
@@ -55,15 +54,12 @@ public class Parser {
 				for(Element params : transponder.getElementsByClass("bld"))
 				{
 					transponderParams.add(params.text());
-					//System.out.println(params.text());
 				}
-				//break;
 				parsedTransponders.add(transponderParams);
-				//System.out.println("----------------------------");
 			}
 			
 		} catch (IOException e) {
-			System.out.println("FILE IS NOT DOWNLOADED!!!"); //DODAÆ LOG!!!
+			logger.fatal("Plik preferencji nie zosta³ pobrany lub nie istnieje");
 			e.printStackTrace();
 		}
 		
@@ -74,7 +70,6 @@ public class Parser {
 	
 public ArrayList<ArrayList<ArrayList<String>>> getChannels(){
 		
-		//File file = new File("web_pages/hotbird.html");
 		Document doc;
 		
 		ArrayList<ArrayList<ArrayList<String>>> parsedTranspondersChannelList = new ArrayList<ArrayList<ArrayList<String>>>();
@@ -83,9 +78,7 @@ public ArrayList<ArrayList<ArrayList<String>>> getChannels(){
 		
 		try {
 			doc = Jsoup.parse(file, "UTF-8");
-			//Element link = doc.select("TRY").first();
 			ArrayList<Element> transponderChannelList = new ArrayList<Element>();
-			//pageList = doc.getElementsByTag("PAGE");
 			transponderChannelList = doc.getElementsByClass("fl");
 			
 			for(Element transponderCL : transponderChannelList)
@@ -98,7 +91,6 @@ public ArrayList<ArrayList<ArrayList<String>>> getChannels(){
 					for(Element tCG : tCL.getElementsByTag("td"))
 					{
 						if(index++ < 2) continue; //pomijanie 2 pierwszych kolumn "œmieci"
-						//System.out.println(tCG.text());
 						channelList.add(tCG.text());
 					}
 					channelGroups.add(channelList);
@@ -110,7 +102,7 @@ public ArrayList<ArrayList<ArrayList<String>>> getChannels(){
 			}
 			
 		} catch (IOException e) {
-			System.out.println("FILE IS NOT DOWNLOADED!!!"); //DODAÆ LOG!!!
+			logger.fatal("Plik preferencji nie zosta³ pobrany lub nie istnieje");
 			e.printStackTrace();
 		}
 			

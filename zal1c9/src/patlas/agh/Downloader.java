@@ -11,52 +11,36 @@ import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Set;
-import java.util.concurrent.CopyOnWriteArraySet;
 
-import patlas.agh.utils.ThreadCompleteListener;
+
+import org.apache.log4j.Logger;
+
 
 
 public class Downloader implements Runnable {
 
-	private URL url;
-	private File file;
 	public int numtry = 1;
-	public static long TIMEOUT=0;;
-	private String fName;
+	public Boolean isDownloaded = false;
+	public static long TIMEOUT=0;
 	public static String usrAgent = "brak";
 	
-	public Boolean isDownloaded = false;
+	private URL url;
+	private File file;	
+	private String fName;
 	private String dir= "web_pages/";
+	private int timeout = 1000;
 	
-	private final Set<ThreadCompleteListener> listeners = new CopyOnWriteArraySet<ThreadCompleteListener>();
 	
-	public final void addListener(final ThreadCompleteListener listener) 
-	{
-		listeners.add(listener);
-	}
 	
-	public final void removeListener(final ThreadCompleteListener listener) 
-	{
-		listeners.remove(listener);
-	}
-	
-	private final void notifyListeners() {
-		for (ThreadCompleteListener listener : listeners) 
-		{
-			listener.notifyOfThreadComplete(this);
-		}
-	}
-		
-	
+	final static Logger logger = Logger.getLogger(Downloader.class);
 	
 	public static void setTimeout(long time)
 	{
 		TIMEOUT = time;
+		logger.info("Zmienna timeout zosta³a ustawiona na:"+TIMEOUT );
 	}
 	
 	
@@ -71,25 +55,19 @@ public class Downloader implements Runnable {
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();//DODAÆ LOGGER!!!
 		}
-		//System.out.println(String.valueOf(Math.abs(str.hashCode())));
-		//Integer x = Integer.valueOf("895487832138352138574", 16);
-		//System.out.println(ret);
-				
+
 		return String.valueOf(Math.abs(str.hashCode()));//ret;
 	}
 	
 	
-	/*public Boolean downloadPage()
-	{
-		return this.downloadPage(StandardCharsets.UTF_8);
-	}*/
+
 	public void run()
 	{
 	try {
 	      doRun();
 	    } finally 
 	    {
-	      notifyListeners();
+	     
 	    }
 	}
 	
@@ -99,8 +77,8 @@ public class Downloader implements Runnable {
 	    BufferedReader br;
 	    BufferedWriter bw = null;
 	    String line;
-	    System.out.println("Teraz dzialam ja:" + url.toString()); //zakomentowac !!
-	    //DODAÆ LOGGER -> taki task teraz dzia³a
+	 	logger.info("Ruszy³ w¹tek: " + url.toString()); 
+
 	    Thread.currentThread().setName(fName);
 	    System.setProperty("http.agent", ""); 
 	    
@@ -110,17 +88,15 @@ public class Downloader implements Runnable {
 				file.createNewFile();
 			}
 			catch(IOException ioe){
-		         System.out.println("Exception occurred:"); //DODAÆ LOGGER!!!
+		         logger.warn("Napotkano problem podczas trzowania pliku: "+file.toString());
 		    	 ioe.printStackTrace();
 			}
 		}
 
-	    try {
-	        //is = url.openStream();  // throws an IOException
-	    	
-	    	
+	    try {  	
 	    	HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 	    	httpConn.setRequestProperty("User-agent", usrAgent);
+	    	httpConn.setConnectTimeout(timeout);
 	    	is = httpConn.getInputStream();
 	    	
 	    	
@@ -133,21 +109,22 @@ public class Downloader implements Runnable {
 	        	bw.newLine();
 	        }
 	    } catch (MalformedURLException mue) {
+	    	logger.error("Podano b³êdny adres strony www");
 	         mue.printStackTrace();
 	    } catch (IOException ioe) {
+	    	logger.error("Wykryto b³¹d podczas próby zapisu/odczytu do pliku: " +fName);
 	         ioe.printStackTrace();
 	    } finally {
 	        try {
 	            if (is != null) is.close();
 	            if (bw != null) bw.close();
+	            logger.info("Strona zosta³a pobrana i zapisana do pliku: " +fName);
 	        } catch (IOException ioe) {
 	            // nothing to see here
 	        }
 	    }
 	    isDownloaded = true;
-	    
-	    //new Parser(this);
-	    //return true;
+
 	}
 	
 	public String getStringUrl()
@@ -168,7 +145,7 @@ public class Downloader implements Runnable {
 		try {
 			url = new URL(urlString);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
+			logger.fatal("Podany adres nie spe³nia wymogów standardu.");
 			e.printStackTrace();
 		}				
 	}
@@ -201,7 +178,7 @@ public class Downloader implements Runnable {
 		try {
 			url = new URL(urlString);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
+			logger.fatal("Podany adres nie spe³nia wymogów standardu.");
 			e.printStackTrace();
 		}	
 		isDownloaded = true;
@@ -214,17 +191,18 @@ public class Downloader implements Runnable {
 		String urlString = pref.getAddr();
 		TIMEOUT = Preference.TIMEOUT;
 		numtry = pref.getNumTry();
+		timeout = pref.getTimeout();
 		
 		fName = "f_"+Downloader.MD5string(urlString)+".html";
 		file = new File(dir+fName);
 		try {
 			url = new URL(urlString);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
+			logger.fatal("Podany adres nie spe³nia wymogów standardu.");
 			e.printStackTrace();
 		}	
 		
-		usrAgent = pref.getAgent();
+		usrAgent = Preference.getAgent();
 		isDownloaded = true;
 	}
 	

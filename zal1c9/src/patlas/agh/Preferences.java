@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -21,44 +22,59 @@ public class Preferences {
 	static String dir = "";
 	public static List<Preference> prefList = new ArrayList<Preference>();
 	
+	final static Logger logger = Logger.getLogger(Preferences.class);
 	
+	private static String defaultBrowser = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36";
 	
 	public static void saveSettings()
 	{
+		Boolean newFile = false;
 		File file = new File(dir+prefFile);
 		
 		if(!file.exists())
 		{
 			try{
 				file.createNewFile();
+				newFile = true;
 			}
 			catch(IOException ioe){
-		         System.out.println("Exception occurred:"); //DODAÆ LOGGER!!!
+		         logger.error("Natrafiono na b³¹d podczas próby zapisu preferencji.");
 		    	 ioe.printStackTrace();
 			}
 		}
 		
 		try {
 				PrintWriter writer = new PrintWriter( new FileOutputStream(file, false) );	
-				
-				writer.println("<AGENT>");
-				writer.println(Preference.getAgent());
-				writer.println("</AGENT>");
-				writer.println("");
-				
-				for(Preference pref : prefList )
+				if(newFile == true)
 				{
-					writer.println("<PAGE>");
-					writer.println("\t<ADDR>"+pref.getAddr()+"</ADDR>");
-					writer.println("\t<TRY>"+pref.getNumTry()+"</TRY>");
-					writer.println("</PAGE>");
+					writer.println("<AGENT>");
+					writer.println(defaultBrowser);
+					writer.println("</AGENT>");
 					writer.println("");
+				}
+				else
+				{
+					writer.println("<AGENT>");
+					writer.println(Preference.getAgent());
+					writer.println("</AGENT>");
+					writer.println("");
+					
+					for(Preference pref : prefList )
+					{
+						writer.println("<PAGE>");
+						writer.println("\t<ADDR>"+pref.getAddr()+"</ADDR>");
+						writer.println("\t<TIMEOUT>"+pref.getTimeout()+"</TIMEOUT>");
+						writer.println("</PAGE>");
+						writer.println("");
+					}
 				}
 				
 				writer.close();
+				logger.info("Aktualizacja preferencji zakoñczona sukcesem.");
 		
 		} catch (FileNotFoundException e) {
-			e.printStackTrace(); //DODAÆ LOGGER!!!
+			logger.fatal("Brak pliku preferencji lub plik otwarty.");
+			e.printStackTrace();
 		}
 	}
 	
@@ -69,22 +85,21 @@ public class Preferences {
 			
 		if(!file.exists())
 		{
-			//napisaæ exception
-			System.out.println("FILE DOESN'T EXIST!!");
-			return null;
+			logger.warn("Plik preferencji nie istnieje lub plik otwarty");
+			
+			
+			saveSettings();
+			
+			logger.info("Stworzono domyœlny plik preferencji.");
+			//return null;
 		}
 		
-		/*TESTS
-		String html = "<PAGE><ADDR>Patryk</ADDR> <TRY>25</TRY></PAGE> <PAGE><ADDR>Test</ADDR></PAGE>";		
-		Document doc = Jsoup.parse(html);
-		*/
 	
 		Document doc;
 		TwoTypeList<String,Integer> lst =  new TwoTypeList<String, Integer>();
 		try {
 			
 			doc = Jsoup.parse(file, "UTF-8");
-			//Element link = doc.select("TRY").first();
 			ArrayList<Element> pageList = new ArrayList<Element>();
 			
 			Preference.setAgent(doc.getElementsByTag("AGENT").get(0).text().toString());
@@ -93,7 +108,7 @@ public class Preferences {
 			
 			for( Element page : pageList )
 			{
-				lst.addItem(page.select("ADDR").text(), Integer.parseInt(page.select("TRY").text(),10));
+				lst.addItem(page.select("ADDR").text(), Integer.parseInt(page.select("TIMEOUT").text(),10));
 			}
 			
 			
@@ -112,10 +127,11 @@ public class Preferences {
 		
 		for(int index=0; index<tmp.size; index++){
 			
-			/*Preference a =*/new Preference(tmp.getAitem(index), tmp.getBitem(index));
-			//System.out.println("_"+tmp.getAitem(index));
+			new Preference(tmp.getAitem(index), tmp.getBitem(index));
 						
 		}
+		
+		logger.info("Wczytywanie preferencji zakoñczono sukcesem.");
 	}
 	
 }

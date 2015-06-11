@@ -1,35 +1,26 @@
 package patlas.agh;
 
-import javax.swing.DefaultListModel;
+
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JList;
-import javax.swing.JTree;
 import javax.swing.JLabel;
-import javax.swing.ListModel;
 
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 
-import javax.swing.border.BevelBorder;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
 import java.awt.Color;
 
 import javax.swing.border.TitledBorder;
-
-import java.awt.SystemColor;
-
 import javax.swing.JOptionPane;
-import javax.swing.JToggleButton;
 import javax.swing.JCheckBox;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
-import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JMenuItem;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.ListCellRenderer;
 import javax.swing.ListSelectionModel;
@@ -44,25 +35,21 @@ import java.util.concurrent.Future;
 
 import javax.swing.JScrollPane;
 
+import org.apache.log4j.Logger;
+
 import patlas.agh.exception.MyException;
 import patlas.agh.utils.CheckListItem;
 import patlas.agh.utils.DataBaseViewer;
-import patlas.agh.utils.TaskDone;
-import patlas.agh.utils.ThreadCompleteListener;
+
 
 public class MyGUI extends JFrame{
 	private JTextField timeoutText;
 	private JTextField addrText;	
 	private CheckListItem[] listItem;
 	private ArrayList<Downloader> listDownloaderPool = new ArrayList<Downloader>();
-	private String dataBase = "test.db";
-	private Thread parsingThread = null;
 	private DownloaderPool downloaderPool = null;
 	
-	public void notifyOfThreadComplete(Downloader downloader)
-	{
-		
-	}
+	final static Logger logger = Logger.getLogger(MyGUI.class);
 	
 	
 	public MyGUI() {
@@ -72,11 +59,8 @@ public class MyGUI extends JFrame{
 		
 		getContentPane().setLayout(null);
 		
-		/*JList settings */
-
-		
 		Preferences.loadSettings();
-		/*CheckListItem[]*/ listItem = new CheckListItem[Preferences.prefList.size()];
+		listItem = new CheckListItem[Preferences.prefList.size()];
 		
 		for(int index=0; index<Preferences.prefList.size();index++)
 		{
@@ -94,6 +78,7 @@ public class MyGUI extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				
 				Preferences.saveSettings();
+				logger.info("Preferencje zosta³y zapisane do pliku.");
 				
 			}
 		});
@@ -131,6 +116,8 @@ public class MyGUI extends JFrame{
 					list_1.setListData(listItem);
 					list_1.validate();
 					list_1.repaint();
+					
+					logger.info("Dodano now¹ stronê do listy.");
 				}
 				
 			}
@@ -147,15 +134,7 @@ public class MyGUI extends JFrame{
 				{
 					if(listItem[index].isSelected()==true)
 					{
-						// DOBRE STARE ROZWIAZANIE
-						//listDownloaderPool.add(new Downloader(Preferences.prefList.get(index)));
 						listDownloaderPool.add(new DownloaderWithParseDB(Preferences.prefList.get(index)));
-						
-						//listDownloaderPool.get(index).addListener(this);
-						
-						//patlas.agh.addListener(this);
-						//System.out.println(Preferences.prefList.get(index).getAddr());
-						
 					}
 				}
 				
@@ -163,49 +142,9 @@ public class MyGUI extends JFrame{
 				try {
 					ArrayList<Future<?>> tasks = downloaderPool.addAll(listDownloaderPool);
 				} catch (MalformedURLException e1) {
-					// TODO Auto-generated catch block
+					logger.error("Natrafiono na konflikt podczas próby pobierania plików.");
 					e1.printStackTrace();
 				}
-				
-				/*parsingThread = new Thread(new TaskDone(listDownloaderPool,dataBase, listItem));
-				parsingThread.start();*/
-				
-				/*
-				DownloaderPool dp = new DownloaderPool();		
-				try {
-					ArrayList<Future<?>> tasks = dp.addAll(listDownloaderPool);
-					for(int index=0; index<tasks.size();)
-					{
-						if(tasks.get(index).isDone() == true) index++;
-					}
-					
-					SqlDB db = new SqlDB(dataBase);
-					
-					for(int index=0; index<Preferences.prefList.size();index++)
-					{
-						if(listItem[index].isSelected()==true)
-						{
-							Parser parser = new Parser(new Downloader(Preferences.prefList.get(index)));
-							db.connectDB();
-							//db.clearDB();
-							db.insertTransponderRows(parser.getTransponder());
-							db.insertChannelRows(parser.getChannels());
-							SqlDB.incPosition();
-							//System.out.println(Preferences.prefList.get(index).getAddr());
-						}
-					}
-					
-					
-					
-				} catch (MalformedURLException err) {
-					// TODO Auto-generated catch block
-					err.printStackTrace();
-				} catch (MyException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}*/
-				
-				
 				
 				listDownloaderPool.clear();
 			}
@@ -216,6 +155,7 @@ public class MyGUI extends JFrame{
 		JButton exitBtn = new JButton("EXIT");
 		exitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				logger.info("Aplikacja zosta³a zamkniêta.");
 				System.exit(NORMAL);
 			}
 		});
@@ -241,8 +181,7 @@ public class MyGUI extends JFrame{
 		JButton removeBtn = new JButton("-");
 		removeBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						
-				
+	
 				for(int index=0; index<Preferences.prefList.size();index++)
 				{
 					if(listItem[index].isSelected()==true)
@@ -262,6 +201,8 @@ public class MyGUI extends JFrame{
 				list_1.validate();
 				list_1.repaint();
 				
+				logger.info("Usuniêto obiekt z listy preferencji");
+				
 				
 			}
 		});
@@ -276,7 +217,7 @@ public class MyGUI extends JFrame{
 					if(downloaderPool != null)
 					{
 						downloaderPool.stopNow();
-						System.out.println("Taks stopped!");
+						logger.warn("Pobieranie zosta³o przerwanie przez u¿ytnownika.");
 					}
 						
 					
@@ -308,6 +249,7 @@ public class MyGUI extends JFrame{
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mntmExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				logger.info("Zakoñczono dzia³anie aplikacji.");
 				System.exit(NORMAL);
 			}
 		});
@@ -320,11 +262,12 @@ public class MyGUI extends JFrame{
 		mntmClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					SqlDB dB = new SqlDB(dataBase);
+					SqlDB dB = new SqlDB(SqlDB.DB_NAME);
 					dB.connectDB();
 					dB.clearDB();
+					logger.info("Baza danych zosta³a wyczyszczona.");
 				} catch (MyException e1) {
-					// TODO Auto-generated catch block
+					logger.fatal("Nast¹pi³ b³¹d podczas próby czyszczenia bazy danych.");
 					e1.printStackTrace();
 				}
 			}
@@ -340,9 +283,8 @@ public class MyGUI extends JFrame{
 						DataBaseViewer dbView = new DataBaseViewer(); 
 						dbView.pack(); 
 						dbView.setVisible(true); 
-						//dbView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-						//dbView.setSize(400, 320);
 						dbView.setMinimumSize(new Dimension(550,320));
+						logger.info("Wyœwietlono podgl¹d bazy danych");
 					} 	
 					
 				}); 
@@ -372,8 +314,6 @@ public class MyGUI extends JFrame{
 		});
 		mnAbout.add(mntmCreator);
 		
-		
-		//list.setM
 		
 
 	}

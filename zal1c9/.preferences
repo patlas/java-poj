@@ -3,17 +3,7 @@ Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.
 </AGENT>
 
 <PAGE>
-	<ADDR>http://onet.pl</ADDR>
-	<TRY>7</TRY>
-</PAGE>
-
-<PAGE>
 	<ADDR>http://pl.kingofsat.net/pos-13E_pol.php</ADDR>
-	<TRY>5</TRY>
-</PAGE>
-
-<PAGE>
-	<ADDR>http://pl.kingofsat.net/pos-13E-fta_pol.php</ADDR>
-	<TRY>3</TRY>
+	<TIMEOUT>2500</TIMEOUT>
 </PAGE>
 

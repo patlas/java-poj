@@ -8,12 +8,12 @@ public class Preference {
 	public static  int TIMEOUT = 80;
 	private String addr;
 	private static String USR_AGENT;
-	//private String name;
 	private int numTry;
+	private int timeout = 1000;
 	
-	public Preference(String addr, int num)
+	public Preference(String addr, int tm)
 	{
-		this.numTry = num;
+		this.timeout = tm;
 		this.addr = addr;
 		Preferences.prefList.add(this);
 	}
@@ -53,6 +53,17 @@ public class Preference {
 	public int getNumTry()
 	{
 		return this.numTry;
+	}
+	
+	
+	public void setTimeout(int num)
+	{
+		this.timeout = num;
+	}
+	
+	public int getTimeout()
+	{
+		return this.timeout;
 	}
 	
 	public static String getAgent()

@@ -8,9 +8,12 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+
 public class DownloaderPool {
 
-	//private ArrayList<Downloader> list = new ArrayList<Downloader>();
+	final static Logger logger = Logger.getLogger(DownloaderPool.class);
+	
 	private ThreadPoolExecutor exec;
 	
 	public DownloaderPool()
@@ -21,22 +24,7 @@ public class DownloaderPool {
 	
 	public ArrayList<Future<?>> addAll(ArrayList<Downloader> list) throws MalformedURLException
 	{
-		
-		/*   ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future<String> future = executor.submit(new Task());
-
-        try {
-            System.out.println("Started..");
-            System.out.println(future.get(5, TimeUnit.SECONDS));
-            System.out.println("Finished!");
-        } catch (TimeoutException e) {
-            System.out.println("Terminated!");
-        }
-
-        executor.shutdownNow();
-        
-	*/
-			
+					
 		ArrayList<Future<?>> ret = new ArrayList<Future<?>>();
 		
 		BlockingQueue<Runnable> runnables = new ArrayBlockingQueue<Runnable>(1024);
@@ -46,15 +34,15 @@ public class DownloaderPool {
 		
 		for (Downloader dwn : list)
 			ret.add(executor.submit(dwn));
-		//System.out.println(executor.getActiveCount());
 		executor.shutdown();
-		
+		logger.info("Rozpoczêto procedurê wielow¹tkowego pobierania.");
 		return ret;
 	}
 	
 	public void stopNow()
 	{
 		exec.shutdownNow();
+		logger.warn("Parsowanie zosta³o przerwane przez u¿ytkownika.");
 	}
 
 }

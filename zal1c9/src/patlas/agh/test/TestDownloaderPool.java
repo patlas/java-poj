@@ -60,11 +60,7 @@ public class TestDownloaderPool {
 		}
 		
 		System.out.println("Pobra³em wszystko");
-			
-		
-		
-		
-		
+
 	}
 
 }

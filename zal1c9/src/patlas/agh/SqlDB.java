@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import patlas.agh.exception.MyException;
 
 public class SqlDB {
@@ -15,10 +17,12 @@ public class SqlDB {
 	Connection con = null;
 	private static int FREE_POSITION=0;
 	public static Boolean IN_USE = false;
-	public static String DB_NAME = "test.db";
+	public static String DB_NAME = "../SatelliteDB.db";//"test.db";
 	
 	private String loc = null;
 	private int myID = 0;
+	
+	final static Logger logger = Logger.getLogger(SqlDB.class);
 	
 	
 	public SqlDB(String localization)
@@ -75,22 +79,20 @@ public class SqlDB {
 		      
 		      stmt.executeUpdate(sql);
 		      
+		      logger.info("Nowe tabele zosta³y utworzone");
 		      
 		      stmt.close();
-		      con.close();			
+		     // con.close();			
 			}
 		
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			SqlDB.IN_USE = false;
+			logger.fatal("B³¹d podczas próby nawiazania po³¹czenia z baz¹ danych.");
 			throw new MyException(e.toString());
-			//e.printStackTrace();
 		}
 		
 	}
 
-	/*sString sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) " +
-            "VALUES (2, 'Allen', 25, 'Texas', 15000.00 );"; 
-	*/
 	public void insertTransponderRows(ArrayList<ArrayList<String>> transponders) throws MyException
 	{
 		
@@ -99,11 +101,7 @@ public class SqlDB {
 		int index = 0;
 		for(ArrayList<String>  tr : transponders)
         {
-			/*if(tr.size() == 10)//mamy radio
-			{
-				values+= "NULL, NULL,";
-			}
-			*/
+
 			index++;
 			StringBuilder values = new StringBuilder();
         	for( String t : tr)
@@ -121,10 +119,11 @@ public class SqlDB {
 							+ "VALUES("+(myID+index)+"," + values.toString()+");";
 				
 				stmt.executeUpdate(sql);
-				//System.out.println(sql);
+				logger.info("Aktualizacja bazy transponderów zakoñczona pomyœlnie");
 			} catch (SQLException e) {
-				throw new MyException(e.toString());
-				//e.printStackTrace();
+				SqlDB.IN_USE = false;
+				logger.error("Wyst¹pi³ b³¹d podczas próby aktualizacji bazy transponderów");
+				throw new MyException(e.toString());				
 			}
         }	
 	}
@@ -168,13 +167,9 @@ public class SqlDB {
 	        	values.append(')');
 	        	insertQuery.append(values.toString()+", \n");
 	        	
-	        	//System.out.println(values.toString());
 	        }	
 			insertQuery.deleteCharAt(insertQuery.length()-3);
-			
-			//System.out.println(insertQuery.toString());
-			//if(index>1) break;
-			
+					
 			
 			try {
 				Statement stmt = con.createStatement();
@@ -184,10 +179,11 @@ public class SqlDB {
 							+ "VALUES "+ insertQuery.toString() +";";
 				
 				stmt.executeUpdate(sql);
-				//System.out.println(sql);
+				logger.info("Aktualizacja bazy kana³ów zakoñczona pomyœlnie");
 			} catch (SQLException e) {
+				SqlDB.IN_USE = false;
+				logger.error("Wyst¹pi³ b³¹d podczas próby aktualizacji bazy kana³ów");
 				throw new MyException(e.toString());
-				//e.printStackTrace();
 			}
 		
 		}
@@ -214,7 +210,7 @@ public class SqlDB {
             while(result.next()) 
             {
             	ArrayList<String> retBld = new ArrayList<String>();
-            	for(int index=1; index<size; index++)
+            	for(int index=1; index<size+1; index++)
             	{
             		retBld.add(result.getString(index));
             	}
@@ -235,9 +231,13 @@ public class SqlDB {
             	index++;
             }
             
+            logger.info("Odczyt bazy danych zakoñczy³ siê sukcesem.");
+            
             return ret;
             
         } catch (SQLException e) {
+        	SqlDB.IN_USE = false;
+        	logger.error("Podczas odczytu zawartoœci bazy danych natrafiono na b³êdy.");
             e.printStackTrace();
             return null;
         }
@@ -258,7 +258,7 @@ public class SqlDB {
 			stmt.executeUpdate(sql);
 			
 		} catch (SQLException e) {
-
+			SqlDB.IN_USE = false;
 			throw new MyException(e.toString()); 
 		}
 		

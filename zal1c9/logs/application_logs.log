@@ -1,0 +1,495 @@
+2015-06-11 21:13:50 WARN  Test:123 - This is warn : 2
+2015-06-11 21:13:50 ERROR Test:124 - This is error : 3
+2015-06-11 21:13:50 FATAL Test:125 - This is fatal : 4
+2015-06-11 21:18:22 WARN  MainApp:26 - This is warn : 2
+2015-06-11 21:18:22 ERROR MainApp:27 - This is error : 3
+2015-06-11 21:18:22 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 21:44:37 WARN  MainApp:26 - This is warn : 2
+2015-06-11 21:44:37 ERROR MainApp:27 - This is error : 3
+2015-06-11 21:44:37 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 21:44:43 INFO  MyGUI:205 - Usuniêto obiekt z listy preferencji
+2015-06-11 21:44:53 INFO  MyGUI:121 - Dodano now¹ stronê do listy.
+2015-06-11 21:44:59 INFO  MyGUI:205 - Usuniêto obiekt z listy preferencji
+2015-06-11 21:45:04 INFO  MyGUI:288 - Wyœwietlono podgl¹d bazy danych
+2015-06-11 21:45:16 INFO  MyGUI:82 - Preferencje zosta³y zapisane do pliku.
+2015-06-11 21:45:30 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:00:14 WARN  MainApp:26 - This is warn : 2
+2015-06-11 22:00:14 ERROR MainApp:27 - This is error : 3
+2015-06-11 22:00:14 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 22:00:15 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:00:27 ERROR SqlDB:236 - Podczas odczytu zawartoœci bazy danych natrafiono na b³êdy.
+2015-06-11 22:00:27 ERROR SqlDB:236 - Podczas odczytu zawartoœci bazy danych natrafiono na b³êdy.
+2015-06-11 22:00:34 INFO  MyGUI:269 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:00:38 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:00:38 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E-fta_pol.php
+2015-06-11 22:00:38 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:00:38 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1961930432.html
+2015-06-11 22:00:38 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:00:55 INFO  MyGUI:288 - Wyœwietlono podgl¹d bazy danych
+2015-06-11 22:01:15 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:01:59 WARN  MainApp:26 - This is warn : 2
+2015-06-11 22:01:59 ERROR MainApp:27 - This is error : 3
+2015-06-11 22:01:59 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 22:02:00 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:02:05 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:02:05 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E-fta_pol.php
+2015-06-11 22:02:05 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:02:07 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1961930432.html
+2015-06-11 22:02:07 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1961930432.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:02:07 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:02:07 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:02:07 ERROR SqlDB:123 - Wyst¹pi³ b³¹d podczas próby aktualizacji bazy transponderów
+2015-06-11 22:02:07 ERROR DownloaderWithParseDB:61 - W¹tek : f_1961930432.html natrafi³ na problem podczas przetwarzanai strony
+2015-06-11 22:03:04 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:03:19 WARN  MainApp:26 - This is warn : 2
+2015-06-11 22:03:19 ERROR MainApp:27 - This is error : 3
+2015-06-11 22:03:19 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 22:03:20 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:03:23 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:03:23 ERROR SqlDB:236 - Podczas odczytu zawartoœci bazy danych natrafiono na b³êdy.
+2015-06-11 22:03:23 ERROR SqlDB:236 - Podczas odczytu zawartoœci bazy danych natrafiono na b³êdy.
+2015-06-11 22:03:56 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:03:56 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E-fta_pol.php
+2015-06-11 22:03:56 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:03:56 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1961930432.html
+2015-06-11 22:03:56 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:04:24 INFO  MyGUI:269 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:04:26 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:04:26 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E-fta_pol.php
+2015-06-11 22:04:26 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:04:27 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1961930432.html
+2015-06-11 22:04:27 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:04:36 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:06:27 WARN  MainApp:26 - This is warn : 2
+2015-06-11 22:06:27 ERROR MainApp:27 - This is error : 3
+2015-06-11 22:06:27 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 22:06:27 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:06:31 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:06:31 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E-fta_pol.php
+2015-06-11 22:06:31 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:06:31 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1961930432.html
+2015-06-11 22:06:31 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1961930432.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:06:31 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:06:31 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:32 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:33 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  DownloaderWithParseDB:52 - W¹tek : f_1961930432.html zakoñczy³ parsowanie i zapis bazy danych
+2015-06-11 22:06:34 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1475209670.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:06:34 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:06:34 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:34 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:35 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:36 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:37 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:38 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:39 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:40 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:40 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:40 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:40 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:40 INFO  SqlDB:181 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:06:40 INFO  DownloaderWithParseDB:52 - W¹tek : f_1475209670.html zakoñczy³ parsowanie i zapis bazy danych
+2015-06-11 22:06:47 INFO  SqlDB:232 - Odczyt bazy danych zakoñczy³ siê sukcesem.
+2015-06-11 22:06:47 INFO  SqlDB:232 - Odczyt bazy danych zakoñczy³ siê sukcesem.
+2015-06-11 22:06:47 INFO  MyGUI:288 - Wyœwietlono podgl¹d bazy danych
+2015-06-11 22:06:52 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:08:20 WARN  MainApp:26 - This is warn : 2
+2015-06-11 22:08:20 ERROR MainApp:27 - This is error : 3
+2015-06-11 22:08:20 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 22:08:21 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:08:27 INFO  MyGUI:269 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:08:30 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:08:30 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:08:31 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:08:31 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1475209670.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:08:31 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:08:31 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:08:31 ERROR SqlDB:124 - Wyst¹pi³ b³¹d podczas próby aktualizacji bazy transponderów
+2015-06-11 22:08:31 ERROR DownloaderWithParseDB:61 - W¹tek : f_1475209670.html natrafi³ na problem podczas przetwarzanai strony
+2015-06-11 22:09:55 INFO  MyGUI:288 - Wyœwietlono podgl¹d bazy danych
+2015-06-11 22:12:38 WARN  MainApp:26 - This is warn : 2
+2015-06-11 22:12:38 ERROR MainApp:27 - This is error : 3
+2015-06-11 22:12:38 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 22:12:38 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:12:42 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:12:43 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:12:45 WARN  MainApp:26 - This is warn : 2
+2015-06-11 22:12:45 ERROR MainApp:27 - This is error : 3
+2015-06-11 22:12:45 FATAL MainApp:28 - This is fatal : 4
+2015-06-11 22:12:45 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:12:57 INFO  MyGUI:269 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:13:02 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:13:02 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:13:02 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:13:02 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1475209670.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:13:02 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:13:03 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:13:03 ERROR SqlDB:125 - Wyst¹pi³ b³¹d podczas próby aktualizacji bazy transponderów
+2015-06-11 22:13:03 ERROR DownloaderWithParseDB:62 - W¹tek : f_1475209670.html natrafi³ na problem podczas przetwarzanai strony
+2015-06-11 22:14:07 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:18:58 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:18:58 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:18:59 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:19:01 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:19:01 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:19:14 INFO  MyGUI:269 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:19:25 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:19:25 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E-fta_pol.php
+2015-06-11 22:19:35 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1961930432.html
+2015-06-11 22:19:35 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1961930432.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:19:35 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:19:35 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:19:35 ERROR SqlDB:125 - Wyst¹pi³ b³¹d podczas próby aktualizacji bazy transponderów
+2015-06-11 22:19:35 ERROR DownloaderWithParseDB:62 - W¹tek : f_1961930432.html natrafi³ na problem podczas przetwarzanai strony
+2015-06-11 22:23:32 INFO  MyGUI:159 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:23:34 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:23:34 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:23:46 INFO  MyGUI:269 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:23:51 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:23:51 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:23:51 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:23:51 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1475209670.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:23:51 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:23:52 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:24:07 ERROR SqlDB:125 - Wyst¹pi³ b³¹d podczas próby aktualizacji bazy transponderów
+2015-06-11 22:24:07 ERROR DownloaderWithParseDB:62 - W¹tek : f_1475209670.html natrafi³ na problem podczas przetwarzanai strony
+2015-06-11 22:24:35 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:24:36 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:24:43 INFO  MyGUI:269 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:24:46 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:24:46 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:24:47 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:24:47 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1475209670.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:24:47 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:24:47 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:26:51 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:26:51 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:28:43 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:28:43 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:31:22 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:31:22 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:31:25 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:31:25 FATAL MyGUI:270 - Nast¹pi³ b³¹d podczas próby czyszczenia bazy danych.
+2015-06-11 22:34:10 INFO  MyGUI:158 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:34:13 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:34:13 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:34:49 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:36:26 INFO  Preferences:116 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:36:27 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:36:30 INFO  SqlDB:82 - Nowe tabele zosta³y utworzone
+2015-06-11 22:36:30 INFO  MyGUI:268 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:36:38 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:36:38 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:36:38 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:36:38 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1475209670.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:36:38 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:39 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:40 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:41 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:41 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:41 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:41 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:41 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:41 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:41 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:41 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:42 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:43 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:44 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:45 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:45 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:45 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:45 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:45 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:36:45 INFO  DownloaderWithParseDB:52 - W¹tek : f_1475209670.html zakoñczy³ parsowanie i zapis bazy danych
+2015-06-11 22:37:15 INFO  MyGUI:158 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:45:14 WARN  Preferences:88 - Plik preferencji nie istnieje lub plik otwarty
+2015-06-11 22:45:14 INFO  Preferences:93 - Stworzono domyœlny plik preferencji.
+2015-06-11 22:45:14 INFO  Preferences:134 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:45:14 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:46:28 INFO  MyGUI:158 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:46:41 WARN  Preferences:88 - Plik preferencji nie istnieje lub plik otwarty
+2015-06-11 22:46:41 INFO  Preferences:73 - Aktualizacja preferencji zakoñczona sukcesem.
+2015-06-11 22:46:41 INFO  Preferences:93 - Stworzono domyœlny plik preferencji.
+2015-06-11 22:46:41 INFO  Preferences:134 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:46:41 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:47:16 INFO  MyGUI:120 - Dodano now¹ stronê do listy.
+2015-06-11 22:47:17 INFO  Preferences:73 - Aktualizacja preferencji zakoñczona sukcesem.
+2015-06-11 22:47:17 INFO  MyGUI:81 - Preferencje zosta³y zapisane do pliku.
+2015-06-11 22:47:39 INFO  MyGUI:268 - Baza danych zosta³a wyczyszczona.
+2015-06-11 22:47:42 INFO  MyGUI:287 - Wyœwietlono podgl¹d bazy danych
+2015-06-11 22:47:53 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:47:53 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:47:53 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:47:53 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1475209670.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:47:53 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:47:54 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:54 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:54 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:54 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:54 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:54 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:54 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:54 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:55 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:56 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:57 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:58 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:47:59 INFO  DownloaderWithParseDB:52 - W¹tek : f_1475209670.html zakoñczy³ parsowanie i zapis bazy danych
+2015-06-11 22:48:03 INFO  SqlDB:234 - Odczyt bazy danych zakoñczy³ siê sukcesem.
+2015-06-11 22:48:03 INFO  SqlDB:234 - Odczyt bazy danych zakoñczy³ siê sukcesem.
+2015-06-11 22:48:03 INFO  MyGUI:287 - Wyœwietlono podgl¹d bazy danych
+2015-06-11 22:49:58 INFO  MyGUI:158 - Aplikacja zosta³a zamkniêta.
+2015-06-11 22:50:01 INFO  Preferences:134 - Wczytywanie preferencji zakoñczono sukcesem.
+2015-06-11 22:50:01 INFO  MainApp:20 - Interfejs GUI zosta³ uruchomiony.
+2015-06-11 22:50:05 INFO  DownloaderPool:38 - Rozpoczêto procedurê wielow¹tkowego pobierania.
+2015-06-11 22:50:05 INFO  Downloader:80 - Ruszy³ w¹tek: http://pl.kingofsat.net/pos-13E_pol.php
+2015-06-11 22:50:06 INFO  Downloader:121 - Strona zosta³a pobrana i zapisana do pliku: f_1475209670.html
+2015-06-11 22:50:06 INFO  DownloaderWithParseDB:42 - W¹tek o nazwie: f_1475209670.html rozpocz¹³ zapis do bazy danych.
+2015-06-11 22:50:06 INFO  Parser:23 - Pobieranie pliku preferencji zakoñczone sukcesem.
+2015-06-11 22:50:06 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:06 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:06 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:06 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:06 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:07 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:08 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:122 - Aktualizacja bazy transponderów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:09 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:10 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  MyGUI:287 - Wyœwietlono podgl¹d bazy danych
+2015-06-11 22:50:11 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  SqlDB:182 - Aktualizacja bazy kana³ów zakoñczona pomyœlnie
+2015-06-11 22:50:11 INFO  DownloaderWithParseDB:52 - W¹tek : f_1475209670.html zakoñczy³ parsowanie i zapis bazy danych
+2015-06-11 22:50:15 INFO  SqlDB:234 - Odczyt bazy danych zakoñczy³ siê sukcesem.
+2015-06-11 22:50:15 INFO  SqlDB:234 - Odczyt bazy danych zakoñczy³ siê sukcesem.
+2015-06-11 22:50:15 INFO  MyGUI:287 - Wyœwietlono podgl¹d bazy danych
+2015-06-11 22:50:43 INFO  MyGUI:158 - Aplikacja zosta³a zamkniêta.

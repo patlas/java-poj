@@ -5,6 +5,8 @@ package patlas.agh;
 
 import javax.swing.JOptionPane;
 
+import org.apache.log4j.Logger;
+
 import patlas.agh.exception.MyException;
 
 /**
@@ -13,60 +15,42 @@ import patlas.agh.exception.MyException;
  */
 public class DownloaderWithParseDB extends Downloader {
 
+	final static Logger logger = Logger.getLogger(DownloaderWithParseDB.class);
+	
 	public DownloaderWithParseDB(Preference pref) {
 		super(pref);
-		// TODO Auto-generated constructor stub
 	}
 
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		//Thread.currentThread().setName(""+this.getFile().toString());
+
 		super.run();
 		
 		while(SqlDB.IN_USE == true){ 
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				
-				//DODAÆ LOGGER -> task zosta³ zabity!!!
-				System.out.println("Takiego zabito: "+Thread.currentThread().getName());
+				logger.info("W¹tek o nazwie: "+Thread.currentThread().getName()+" zosta³ wstrzymany.");
 				return;
-				//e.printStackTrace();
+
 				
 			}
-			/*try {
-			this.wait();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-			/*try {
-				Thread.currentThread().sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} */
-			//System.out.println("Czekam " + Thread.currentThread().getName());
 		}
 		SqlDB.IN_USE = true;
 		
-		System.out.println("JADE");
+		logger.info("W¹tek o nazwie: "+Thread.currentThread().getName()+" rozpocz¹³ zapis do bazy danych.");
 		
 		SqlDB db = new SqlDB(SqlDB.DB_NAME);
 		Parser parser = new Parser(this);
 		try {
 			db.connectDB();
-			//db.clearDB();
 			db.insertTransponderRows(parser.getTransponder());
 			db.insertChannelRows(parser.getChannels());
-			//SqlDB.incPosition();
 			SqlDB.IN_USE = false;
-			//this.notifyAll();
 			if(this.getFile().delete() == true); // DODAC LOGGER (nie)uda³o siê usun¹æ pliku
-			System.out.println("Pobra³em i skoñczy³em");
+			logger.info("W¹tek : "+Thread.currentThread().getName()+" zakoñczy³ parsowanie i zapis bazy danych");
+
 			
 			JOptionPane.showMessageDialog(null,"Strona o adresie: "+ this.getStringUrl() + " zosta³a"
 					+ " przetworzona pomyœlnie!","Pobieranie zakoñczone",
@@ -74,7 +58,8 @@ public class DownloaderWithParseDB extends Downloader {
 				  );
 			
 		} catch (MyException e) {
-			// TODO Auto-generated catch block
+			SqlDB.IN_USE = false;
+			logger.error("W¹tek : "+Thread.currentThread().getName()+" natrafi³ na problem podczas przetwarzanai strony");
 			e.printStackTrace();
 		}
 		

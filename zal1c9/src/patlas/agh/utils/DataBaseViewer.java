@@ -1,19 +1,11 @@
 package patlas.agh.utils;
 
 import javax.swing.JFrame;
-
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-
 import javax.swing.JTabbedPane;
 import javax.swing.JPanel;
-
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-
 import patlas.agh.SqlDB;
 import patlas.agh.exception.MyException;
 
